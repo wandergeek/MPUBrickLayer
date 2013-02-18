@@ -13,6 +13,8 @@ void testApp::setup(){
     control_panel.addSlider("Brick Height", "brickHeightSlider.xml", brixel.grid.getBrickHeight(), 1, 200, true);
     control_panel.addSlider("Brick Width", "brickWidthSlider.xml", brixel.grid.getBrickWidth(), 1, 200, true);
     control_panel.addSlider("Brick Padding", "brickPadding.xml", brixel.grid.getBrickPadding(), 1, 25, true);
+    control_panel.addSlider("Odd Row Offset", "oddRowOffset.xml", brixel.grid.getOddRowOffset(), -25, 25, true);
+    control_panel.addSlider("Even Row Offset", "evenRowOffset.xml", brixel.grid.getOddRowOffset(), -25, 25, true);
     control_panel.enableEvents();
     
     

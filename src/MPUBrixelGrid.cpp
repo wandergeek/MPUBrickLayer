@@ -30,6 +30,8 @@ void MPUBrixelGrid::setup() {
     bricksPerRow = gridWidth/brickWidth + 1;
     bricksPerCol = gridHeight/brickHeight + 1;
     brickPadding = 1;
+    oddRowOffset = 0;
+    evenRowOffset = 0;
     
 }
 
@@ -68,11 +70,15 @@ void MPUBrixelGrid::draw(){
 
 //------------------Setters------------------\\
 
-void MPUBrixelGrid::setBrickWidth(float val) { brickWidth = val; }
+void MPUBrixelGrid::setBrickWidth(float val) { brickWidth = val;  }
 
 void MPUBrixelGrid::setBrickHeight(float val) { brickHeight = val; }
 
 void MPUBrixelGrid::setBrickPadding(float val) { brickPadding = val; }
+
+void MPUBrixelGrid::setOddRowOffset(float val) { oddRowOffset = val; }
+
+void MPUBrixelGrid::setEvenRowOffset(float val) { evenRowOffset = val; }
 
 
 
@@ -87,5 +93,10 @@ int MPUBrixelGrid::getGridWidth() { return gridWidth; }
 int MPUBrixelGrid::getGridHeight() { return gridHeight; }
 
 float MPUBrixelGrid::getBrickPadding() { return brickPadding; }
+
+float MPUBrixelGrid::getEvenRowOffset() { return evenRowOffset; }
+
+float MPUBrixelGrid::getOddRowOffset() { return oddRowOffset; } 
+
 
 

@@ -43,7 +43,6 @@ void MPUBrixel::draw(){
 
 void MPUBrixel::setAllBlockWidths(float val) {
     
-    grid.setBrickWidth(val);
     
 }
 

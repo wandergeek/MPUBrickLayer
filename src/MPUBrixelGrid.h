@@ -19,14 +19,23 @@ public:
     void setup();
     void update();
     void draw();
-    void setBrickWidth(float brickWidth);
-    void setBrickHeight(float brickHeight);
+    
+    //------------------Setters------------------\\
+    void setBrickWidth(float val);
+    void setBrickHeight(float val);
     void setBrickPadding(float val);
+    void setOddRowOffset(float val);
+    void setEvenRowOffset(float val);
+    
+    //------------------Getters------------------\\
+    float getEvenRowOffset();
+    float getOddRowOffset();
     float getBrickPadding();
     float getBrickWidth();
     float getBrickHeight();
     int getGridWidth();
     int getGridHeight();
+    
 
     
 private:
