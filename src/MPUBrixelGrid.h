@@ -21,10 +21,13 @@ public:
     void draw();
     void setBrickWidth(float brickWidth);
     void setBrickHeight(float brickHeight);
+    void setBrickPadding(float val);
+    float getBrickPadding();
     float getBrickWidth();
     float getBrickHeight();
     int getGridWidth();
     int getGridHeight();
+
     
 private:
 
@@ -34,5 +37,9 @@ private:
     float brickHeight;
     int bricksPerRow;
     int bricksPerCol;
-
+    float lineWidth;
+    float oddRowOffset;
+    float evenRowOffset;
+    float brickPadding;
+    
 };

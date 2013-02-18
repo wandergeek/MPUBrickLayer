@@ -52,3 +52,9 @@ void MPUBrixel::setAllBlockHeights(float val) {
     grid.setBrickHeight(val);
     
 }
+
+void MPUBrixel::setBrickPadding(float val) {
+    
+    grid.setBrickPadding(val);
+    
+}

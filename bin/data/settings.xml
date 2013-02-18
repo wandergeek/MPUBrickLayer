@@ -1,3 +1,6 @@
-<slider1.xml>
-    <val_0>25.500000000</val_0>
-</slider1.xml>
+<brickHeightSlider.xml>
+    <val_0>27.533334732</val_0>
+</brickHeightSlider.xml>
+<brickWidthSlider.xml>
+    <val_0>57.383331299</val_0>
+</brickWidthSlider.xml>

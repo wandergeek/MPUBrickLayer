@@ -23,5 +23,6 @@ public:
     MPUBrixelGrid grid;
     void setAllBlockWidths(float val);
     void setAllBlockHeights(float val);
+    void setBrickPadding(float val);
     
 };

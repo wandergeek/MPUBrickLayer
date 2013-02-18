@@ -12,6 +12,7 @@ void testApp::setup(){
     control_panel.addPanel("panel");
     control_panel.addSlider("Brick Height", "brickHeightSlider.xml", brixel.grid.getBrickHeight(), 1, 200, true);
     control_panel.addSlider("Brick Width", "brickWidthSlider.xml", brixel.grid.getBrickWidth(), 1, 200, true);
+    control_panel.addSlider("Brick Padding", "brickPadding.xml", brixel.grid.getBrickPadding(), 1, 25, true);
     control_panel.enableEvents();
     
     
@@ -21,9 +22,11 @@ void testApp::setup(){
 void testApp::update(){
     float newHeight = control_panel.getValueI("brickHeightSlider.xml");
     float newWidth = control_panel.getValueI("brickWidthSlider.xml");
+    float newPadding = control_panel.getValueI("brickPadding.xml"); 
     brixel.update();
     brixel.setAllBlockHeights(newHeight);
     brixel.setAllBlockWidths(newWidth);
+    brixel.setBrickPadding(newPadding);
     
 }
 
