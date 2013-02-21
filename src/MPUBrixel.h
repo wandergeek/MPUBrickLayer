@@ -24,5 +24,7 @@ public:
     void setAllBlockWidths(float val);
     void setAllBlockHeights(float val);
     void setBrickPadding(float val);
-    
+    void setOddRowOffset(float val);
+    void setEvenRowOffset(float val);
+
 };

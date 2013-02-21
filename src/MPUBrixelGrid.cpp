@@ -43,28 +43,36 @@ void MPUBrixelGrid::update() {
 
 
 void MPUBrixelGrid::draw(){
-    ofPushStyle();
-    ofNoFill();
-    ofSetColor(255);
-    ofSetLineWidth(brickPadding);
-    
-    //Rows
-    for(int i=0; i<bricksPerRow; i++) {
-        ofPoint p1, p2;
-        p1.set(i*brickWidth, 1);
-        p2.set(i*brickWidth, gridHeight);
-        ofLine(p1,p2);
-    }
-
-    //Cols
-    for(int i=0; i<bricksPerCol; i++) {
-        ofPoint p1, p2;
-        p1.set(1, i*brickHeight);
-        p2.set(gridWidth, i*brickHeight);
-        ofLine(p1,p2);
-    }
-    
-    ofPopStyle();
+//    ofPushStyle();
+//    ofNoFill();
+//    ofSetColor(255);
+//    ofSetLineWidth(brickPadding);
+//
+//    //Rows
+//    for(int i=0; i<bricksPerRow; i++) {
+//        ofPoint p1, p2;
+//        p1.set(i*brickWidth, 1);
+//        p2.set(i*brickWidth, gridHeight);
+//        ofLine(p1,p2);
+//    }
+//
+//    //Cols
+//
+//    for(int i=0; i<bricksPerCol; i++) {
+//        ofPoint p1, p2;
+//        p1.set(1, i*brickHeight);
+//        p2.set(gridWidth, i*brickHeight);
+//        ofPushMatrix();
+//        if(i % 2 == 0) {
+//            ofTranslate(evenRowOffset, 0);
+//        } else {
+//            ofTranslate(oddRowOffset, 0);
+//        }
+//        ofLine(p1,p2);
+//        ofPopMatrix();
+//    }
+//
+//    ofPopStyle();
 }
 
 

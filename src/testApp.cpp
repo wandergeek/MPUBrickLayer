@@ -14,7 +14,7 @@ void testApp::setup(){
     control_panel.addSlider("Brick Width", "brickWidthSlider.xml", brixel.grid.getBrickWidth(), 1, 200, true);
     control_panel.addSlider("Brick Padding", "brickPadding.xml", brixel.grid.getBrickPadding(), 1, 25, true);
     control_panel.addSlider("Odd Row Offset", "oddRowOffset.xml", brixel.grid.getOddRowOffset(), -25, 25, true);
-    control_panel.addSlider("Even Row Offset", "evenRowOffset.xml", brixel.grid.getOddRowOffset(), -25, 25, true);
+    control_panel.addSlider("Even Row Offset", "evenRowOffset.xml", brixel.grid.getEvenRowOffset(), -25, 25, true);
     control_panel.enableEvents();
     
     
@@ -22,13 +22,17 @@ void testApp::setup(){
 
 //--------------------------------------------------------------
 void testApp::update(){
+    float newOddOffset = control_panel.getValueI("oddRowOffset.xml");
+    float newEvenOffset = control_panel.getValueI("evenRowOffset.xml");
     float newHeight = control_panel.getValueI("brickHeightSlider.xml");
     float newWidth = control_panel.getValueI("brickWidthSlider.xml");
     float newPadding = control_panel.getValueI("brickPadding.xml"); 
     brixel.update();
-    brixel.setAllBlockHeights(newHeight);
-    brixel.setAllBlockWidths(newWidth);
-    brixel.setBrickPadding(newPadding);
+//    brixel.setAllBlockHeights(newHeight);
+//    brixel.setAllBlockWidths(newWidth);
+//    brixel.setBrickPadding(newPadding);
+//    brixel.setEvenRowOffset(newEvenOffset);
+//    brixel.setOddRowOffset(newOddOffset);
     
 }
 
@@ -41,6 +45,21 @@ void testApp::draw(){
 
 //--------------------------------------------------------------
 void testApp::keyPressed(int key){
+
+    if(key == 357) { //up
+        float newHeight = brixel.grid.getBrickHeight();
+        brixel.setAllBlockHeights(++newHeight);
+    } else if (key == 359) { //down
+        float newHeight = brixel.grid.getBrickHeight();
+        brixel.setAllBlockHeights(--newHeight);
+    } else if (key == 356 ) { //left
+        float newWidth = brixel.grid.getBrickWidth();
+        brixel.setAllBlockWidths(--newWidth);
+    } else if (key == 358) { //right
+        float newWidth = brixel.grid.getBrickWidth();
+        brixel.setAllBlockWidths(++newWidth);
+    }
+
 
 }
 

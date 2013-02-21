@@ -42,7 +42,8 @@ void MPUBrixel::draw(){
 }
 
 void MPUBrixel::setAllBlockWidths(float val) {
-    
+
+    grid.setBrickWidth(val);
     
 }
 
@@ -56,4 +57,12 @@ void MPUBrixel::setBrickPadding(float val) {
     
     grid.setBrickPadding(val);
     
+}
+
+void MPUBrixel::setOddRowOffset(float val) {
+    grid.setOddRowOffset(val);
+}
+
+void MPUBrixel::setEvenRowOffset(float val) {
+    grid.setEvenRowOffset(val);
 }

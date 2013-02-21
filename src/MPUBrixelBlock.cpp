@@ -10,7 +10,8 @@
 
 
 MPUBrixelBlock::MPUBrixelBlock() {
-    
+
+
 }
 
 MPUBrixelBlock::~MPUBrixelBlock() {
@@ -18,8 +19,14 @@ MPUBrixelBlock::~MPUBrixelBlock() {
 }
 
 
-void MPUBrixelBlock::setup() {
-    
+void MPUBrixelBlock::setup(int _x, int _y, int _width, int _height,float _thickness) {
+
+    x = _x;
+    y = _y;
+    width = _width;
+    height = _height;
+    thickness=_thickness;
+
 }
 
 
@@ -29,5 +36,8 @@ void MPUBrixelBlock::update() {
 
 
 void MPUBrixelBlock::draw(){
-    
+    ofPushStyle();
+    glLineWidth(thickness);
+    ofRect(x, y, width, height);
+    ofPopStyle();
 }

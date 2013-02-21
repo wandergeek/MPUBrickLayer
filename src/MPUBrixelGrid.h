@@ -21,6 +21,7 @@ public:
     void draw();
     
     //------------------Setters------------------\\
+
     void setBrickWidth(float val);
     void setBrickHeight(float val);
     void setBrickPadding(float val);
@@ -28,6 +29,7 @@ public:
     void setEvenRowOffset(float val);
     
     //------------------Getters------------------\\
+
     float getEvenRowOffset();
     float getOddRowOffset();
     float getBrickPadding();
