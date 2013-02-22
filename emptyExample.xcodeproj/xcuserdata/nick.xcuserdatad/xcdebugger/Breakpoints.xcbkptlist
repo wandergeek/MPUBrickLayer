@@ -23,11 +23,19 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "src/MPUBrixelGrid.cpp"
+<<<<<<< Updated upstream
          timestampString = "382882072.094283"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "81"
          endingLineNumber = "81">
+=======
+         timestampString = "383210499.306919"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "74"
+         endingLineNumber = "74">
+>>>>>>> Stashed changes
       </FileBreakpoint>
    </FileBreakpoints>
 </Bucket>

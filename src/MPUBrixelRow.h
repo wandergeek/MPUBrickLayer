@@ -17,9 +17,10 @@ public:
 
     MPUBrixelRow();
     ~MPUBrixelRow();
-    void setup(int _numBlocks, int _yCoord, float _width, int _height );
+    void setup(int _numBlocks, int _yCoord, float _width, int _height,float blockPadding);
     void update();
     void draw();
+    void getInfo();
 
 
 

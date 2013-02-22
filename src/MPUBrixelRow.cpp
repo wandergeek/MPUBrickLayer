@@ -22,18 +22,18 @@ MPUBrixelRow::~MPUBrixelRow() {
 }
 
 
-void MPUBrixelRow::setup(int _numBlocks, int _yCoord, float _width, int _height,float _thickness ) {
+void MPUBrixelRow::setup(int _numBlocks, int _yCoord, float _width, int _height,float blockPadding) {
     height = _height;
     yCoord = _yCoord;
-    width = _width;
     numBlocks = _numBlocks;
+    width = _width;
     float blockWidth = _width/_numBlocks;
 
 
     blocks = new MPUBrixelBlock*[numBlocks];
-    for(int i=0; i<width; i+=blockWidth) {
+    for(int i=0; i<numBlocks; i++) {
         blocks[i] = new MPUBrixelBlock();
-        blocks[i]->setup(i,yCoord, blockWidth, height,_thickness);
+        blocks[i]->setup(i*height,yCoord, blockWidth, height, blockPadding);
     }
 
 }
@@ -49,5 +49,12 @@ void MPUBrixelRow::draw(){
     for(int i=0; i<numBlocks; i++ ) {
         blocks[i]->draw();
     }
+
+}
+
+
+void MPUBrixelRow::getInfo() {
+
+    cout << "I am a row, my height is: " << height << ", yCoord: " << yCoord << ", numblocks: " << numBlocks << "\n";
 
 }

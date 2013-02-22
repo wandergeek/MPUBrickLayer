@@ -23,21 +23,18 @@ MPUBrixel::~MPUBrixel() {
 
 
 void MPUBrixel::setup() {
-    
-    grid.setup();
-    
+    grid.setup(ofGetHeight(), ofGetWidth(), 70, 40, 1 );
 }
 
-
 void MPUBrixel::update() {
-    grid.update();
+//    grid.update();
     
 }
 
 
 void MPUBrixel::draw(){
     
-    grid.draw();
+//    grid.draw();
     
 }
 
@@ -53,16 +50,11 @@ void MPUBrixel::setAllBlockHeights(float val) {
     
 }
 
-void MPUBrixel::setBrickPadding(float val) {
-    
-    grid.setBrickPadding(val);
-    
-}
 
-void MPUBrixel::setOddRowOffset(float val) {
-    grid.setOddRowOffset(val);
-}
+//----------------Setters----------------\\
 
-void MPUBrixel::setEvenRowOffset(float val) {
-    grid.setEvenRowOffset(val);
-}
+void MPUBrixel::setBrickPadding(float val) { grid.setBrickPadding(val); }
+
+void MPUBrixel::setOddRowOffset(float val) { grid.setOddRowOffset(val); }
+
+void MPUBrixel::setEvenRowOffset(float val) { grid.setEvenRowOffset(val); }

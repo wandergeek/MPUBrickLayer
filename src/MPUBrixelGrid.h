@@ -8,6 +8,7 @@
 
 #pragma once
 #include "ofMain.h"
+#include "MPUBrixelRow.h"
 
 class MPUBrixelGrid {
     
@@ -16,7 +17,7 @@ public:
     
     MPUBrixelGrid();
     ~MPUBrixelGrid();
-    void setup();
+    void setup(int _gridHeight, int _gridWidth, int _blockHeight, int _blockWidth, float _blockPadding );
     void update();
     void draw();
     
@@ -27,6 +28,7 @@ public:
     void setBrickPadding(float val);
     void setOddRowOffset(float val);
     void setEvenRowOffset(float val);
+    
     
     //------------------Getters------------------\\
 
@@ -42,15 +44,17 @@ public:
     
 private:
 
+
+    vector <MPUBrixelRow> rows;
     int gridWidth;
     int gridHeight;
-    float brickWidth;
-    float brickHeight;
+    float blockWidth;
+    float blockHeight;
     int bricksPerRow;
     int bricksPerCol;
     float lineWidth;
     float oddRowOffset;
     float evenRowOffset;
-    float brickPadding;
+    float blockPadding;
     
 };
