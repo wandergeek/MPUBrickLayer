@@ -14,20 +14,27 @@ class MPUBrixelRow {
     
     
 public:
-
     MPUBrixelRow();
     ~MPUBrixelRow();
-    void setup(int _numBlocks, int _yCoord, float _width, int _height,float blockPadding);
+    void setup(int _numBlocks, int _yCoord, int _xCoord, float _width, int _height,float blockPadding, int gridHeight, int gridWidth );
     void update();
     void draw();
     void getInfo();
+    void setBlockWidth(int val);
+    void setBlockHeight(int val);
+    void setBlockPadding(int val);
 
 
 
 private:
-    MPUBrixelBlock** blocks;
     int numBlocks;
     int yCoord;
+    int xCoord;
     int width;
     int height;
+    int blockPadding;
+    int blockWidth;
+    int gridHeight;
+    int gridWidth;
+    
 };

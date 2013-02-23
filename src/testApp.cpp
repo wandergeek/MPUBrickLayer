@@ -17,7 +17,7 @@ void testApp::setup(){
     control_panel.addSlider("Even Row Offset", "evenRowOffset.xml", brixel.grid.getEvenRowOffset(), -25, 25, true);
     control_panel.enableEvents();
     
-    
+    cout << "GridWidth: "<< ofGetWidth() << " GridHeight " << ofGetHeight();
 }
 
 //--------------------------------------------------------------
@@ -28,11 +28,11 @@ void testApp::update(){
     float newWidth = control_panel.getValueI("brickWidthSlider.xml");
     float newPadding = control_panel.getValueI("brickPadding.xml"); 
     brixel.update();
-//    brixel.setAllBlockHeights(newHeight);
-//    brixel.setAllBlockWidths(newWidth);
-//    brixel.setBrickPadding(newPadding);
-//    brixel.setEvenRowOffset(newEvenOffset);
-//    brixel.setOddRowOffset(newOddOffset);
+    brixel.setAllBlockHeights(newHeight);
+    brixel.setAllBlockWidths(newWidth);
+    brixel.setBrickPadding(newPadding);
+    brixel.setEvenRowOffset(newEvenOffset);
+    brixel.setOddRowOffset(newOddOffset);
     
 }
 
