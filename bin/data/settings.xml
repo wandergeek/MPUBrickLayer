@@ -1,6 +1,15 @@
 <brickHeightSlider.xml>
-    <val_0>27.533334732</val_0>
+    <val_0>40.000000000</val_0>
 </brickHeightSlider.xml>
 <brickWidthSlider.xml>
-    <val_0>57.383331299</val_0>
+    <val_0>103.816665649</val_0>
 </brickWidthSlider.xml>
+<brickPadding.xml>
+    <val_0>1.000000000</val_0>
+</brickPadding.xml>
+<oddRowOffset.xml>
+    <val_0>0.277778625</val_0>
+</oddRowOffset.xml>
+<evenRowOffset.xml>
+    <val_0>0.000000000</val_0>
+</evenRowOffset.xml>

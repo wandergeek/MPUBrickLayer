@@ -10,8 +10,8 @@
 #include "MPUBrixelGrid.h"
 #include "MPUBrixelRow.h"
 
-#define MAX_BLOCKS_PER_ROW 500
-#define MAX_BLOCKS_PER_COL 500
+#define MAX_BLOCKS_PER_ROW 100
+#define MAX_BLOCKS_PER_COL 100
 
 
 MPUBrixelGrid::MPUBrixelGrid() {
@@ -91,9 +91,24 @@ void MPUBrixelGrid::setAllBlockPadding(float val) {
 
 }
 
-void MPUBrixelGrid::setOddRowOffset(float val) { oddRowOffset = val; }
+void MPUBrixelGrid::setOddRowOffset(float val) {
 
-void MPUBrixelGrid::setEvenRowOffset(float val) { evenRowOffset = val; }
+    for (int i=0; i<rows.size(); i++){
+         if(i % 2 != 0 ) {
+             rows[i].setOffset(val);
+         }
+    }
+}
+
+void MPUBrixelGrid::setEvenRowOffset(float val) {
+
+    for (int i=0; i<rows.size(); i++){
+        if(i % 2 == 0 ) {
+            rows[i].setOffset(val);
+        }
+    }
+}
+
 
 
 

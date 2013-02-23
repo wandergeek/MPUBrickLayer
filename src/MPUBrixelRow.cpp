@@ -29,6 +29,7 @@ void MPUBrixelRow::setup(int _numBlocks, int _yCoord, int _xCoord, float _width,
     yCoord = _yCoord;
     xCoord = _xCoord;
     numBlocks = _numBlocks;
+    xOffset = 0;
 
     blockPadding = _blockPadding;
     blockWidth = _width/_numBlocks;
@@ -44,13 +45,18 @@ void MPUBrixelRow::draw(){
 
     ofPushStyle();
     ofNoFill();
-    ofSetColor(255);
+    if(selected) {
+        ofSetColor(255,0,0);
+    } else {
+        ofSetColor(255);
+    }
+
     ofSetLineWidth(blockPadding);
     ofRect(xCoord, yCoord, width, height);
-    for (int i=0; i<gridWidth; i+=blockWidth) {  
+    for (int i=0; i<width; i+=blockWidth) {
         ofPoint p1, p2;
-        p1.set(i, yCoord);
-        p2.set(i, yCoord+height);
+        p1.set(i+xOffset, yCoord);
+        p2.set(i+xOffset, yCoord+height);
         ofLine(p1, p2);
     }
     ofPopStyle();
@@ -72,9 +78,18 @@ void MPUBrixelRow::setBlockWidth(int val) {
 
 void MPUBrixelRow::setBlockHeight(int val) {
 
-    yCoord += val;
     height = val;
 
 }
 
 void MPUBrixelRow::setBlockPadding(int val) { blockPadding = val; }
+
+void MPUBrixelRow::setOffset(int val) { xOffset = val; }
+
+void MPUBrixelRow::contains(int y) {
+
+    if(y > yCoord && y < yCoord + height) {
+        selected = true;
+    }
+
+}

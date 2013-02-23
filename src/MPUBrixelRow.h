@@ -23,7 +23,8 @@ public:
     void setBlockWidth(int val);
     void setBlockHeight(int val);
     void setBlockPadding(int val);
-
+    void setOffset(int val);
+    void contains(int y);
 
 
 private:
@@ -36,5 +37,7 @@ private:
     int blockWidth;
     int gridHeight;
     int gridWidth;
+    int xOffset;
+    bool selected;
     
 };

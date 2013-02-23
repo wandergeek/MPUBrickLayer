@@ -22,4 +22,8 @@ class testApp : public ofBaseApp{
     
         MPUBrixel brixel;
         ofxAutoControlPanel control_panel;
+
+
+    private:
+        void setupControlPanel();
 };
