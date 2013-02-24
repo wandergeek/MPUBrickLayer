@@ -20,6 +20,8 @@ public:
     void setup(int _gridHeight, int _gridWidth, int _blockHeight, int _blockWidth, float _blockPadding );
     void update();
     void draw();
+    void selectRow(int y);
+    void dragRow(int x);
     
     //------------------Setters------------------\\
 

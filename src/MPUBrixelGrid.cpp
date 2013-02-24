@@ -64,6 +64,20 @@ void MPUBrixelGrid::draw(){
 
 }
 
+void MPUBrixelGrid::selectRow(int y) {
+
+    for (int i=0; i<rows.size(); i++){
+        rows[i].selectRow(y);
+    }
+
+}
+
+void MPUBrixelGrid::dragRow(int x) {
+    for (int i=0; i<rows.size(); i++){
+        rows[i].dragRow(x);
+    }
+}
+
 
 //------------------Setters------------------
 

@@ -33,6 +33,7 @@ void MPUBrixelRow::setup(int _numBlocks, int _yCoord, int _xCoord, float _width,
 
     blockPadding = _blockPadding;
     blockWidth = _width/_numBlocks;
+    selected = false;
 }
 
 
@@ -45,6 +46,7 @@ void MPUBrixelRow::draw(){
 
     ofPushStyle();
     ofNoFill();
+
     if(selected) {
         ofSetColor(255,0,0);
     } else {
@@ -84,12 +86,25 @@ void MPUBrixelRow::setBlockHeight(int val) {
 
 void MPUBrixelRow::setBlockPadding(int val) { blockPadding = val; }
 
-void MPUBrixelRow::setOffset(int val) { xOffset = val; }
+void MPUBrixelRow::setOffset(int val) {
+    xOffset = val;
+}
 
-void MPUBrixelRow::contains(int y) {
+void MPUBrixelRow::selectRow(int y) {
 
     if(y > yCoord && y < yCoord + height) {
-        selected = true;
+        if(!selected) {
+            selected = true;   
+        } else {
+            selected = false;  //toggle
+        }
+    } else {
+        selected = false;
     }
+}
 
+void MPUBrixelRow::dragRow(int x) {
+    if(selected) {
+        xOffset += x;
+    }
 }

@@ -38,7 +38,13 @@ void MPUBrixel::draw(){
     
 }
 
+void MPUBrixel::selectRow(int y) {
+    grid.selectRow(y);
+}
 
+void MPUBrixel::dragRow(int x) {
+    grid.dragRow(x);
+}
 
 
 

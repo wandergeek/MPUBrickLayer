@@ -24,8 +24,8 @@ public:
     void setBlockHeight(int val);
     void setBlockPadding(int val);
     void setOffset(int val);
-    void contains(int y);
-
+    void selectRow(int y);
+    void dragRow(int x);
 
 private:
     int numBlocks;

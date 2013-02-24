@@ -26,5 +26,7 @@ public:
     void setBrickPadding(float val);
     void setOddRowOffset(float val);
     void setEvenRowOffset(float val);
+    void selectRow(int y);
+    void dragRow(int x);
 
 };

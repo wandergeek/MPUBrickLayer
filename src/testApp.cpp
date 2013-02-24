@@ -9,6 +9,7 @@ void testApp::setup(){
     brixel.setup();
     ofBackground(0);
     setupControlPanel();
+    lastDragged = 0;
 }
 
 //--------------------------------------------------------------
@@ -69,11 +70,22 @@ void testApp::mouseMoved(int x, int y){
 //--------------------------------------------------------------
 void testApp::mouseDragged(int x, int y, int button){
 
+//    if( lastDragged != 0) {
+//        int dragDist = x - lastDragged;
+//        brixel.dragRow(dragDist);
+//        lastDragged = x;
+//        cout << dragDist << "\n";
+//    }
+
 }
 
 //--------------------------------------------------------------
 void testApp::mousePressed(int x, int y, int button){
-
+    
+    if(control_panel.hidden) 
+        brixel.selectRow(y);        
+    
+    
 }
 
 //--------------------------------------------------------------

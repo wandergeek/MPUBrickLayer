@@ -26,4 +26,5 @@ class testApp : public ofBaseApp{
 
     private:
         void setupControlPanel();
+        int lastDragged;
 };
