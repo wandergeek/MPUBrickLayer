@@ -27,7 +27,7 @@ public:
     void dragRow(int x);
     bool isEven;
     bool selected;
-    void wut();
+    void getInfo();
 
 private:
     int numBlocks;

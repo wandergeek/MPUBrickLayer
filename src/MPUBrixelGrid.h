@@ -23,6 +23,7 @@ public:
     void selectRow(int y);
     void dragRow(int x);
     void dragSelectedGroup(int dist);
+    int ptrRowTest();
     
     //------------------Setters------------------\\
 

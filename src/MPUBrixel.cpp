@@ -48,6 +48,12 @@ void MPUBrixel::dragSelectedGroup(int dist) {
 }
 
 
+void MPUBrixel::dragRow(int x) {
+
+    grid.dragRow(x);
+
+}
+
 //bool MPUBrixel::isRowSelected() {
 //    if(grid.getSelectedRow().) {
 //

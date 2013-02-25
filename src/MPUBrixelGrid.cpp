@@ -91,7 +91,10 @@ void MPUBrixelGrid::selectRow(int y) {
 //
 //}
 
-
+void MPUBrixelGrid::dragRow(int x) {
+    int index = ptrRowTest();
+    rows[index].dragRow(x);
+}
 
 void MPUBrixelGrid::dragSelectedGroup(int dist) {
 
@@ -168,6 +171,14 @@ MPUBrixelRow MPUBrixelGrid::getSelectedRow() {
             return rows[i];
     }
 }
+
+int MPUBrixelGrid::ptrRowTest() {
+    for (int i=0; i<rows.size(); i++){
+        if (rows[i].selected)
+            return i;
+    }
+}
+
 
 float MPUBrixelGrid::getBrickWidth() { return blockWidth; }
 

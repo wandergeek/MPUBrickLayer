@@ -60,8 +60,10 @@ void testApp::mouseDragged(int x, int y, int button){
     if(control_panel.hidden) {
         if( lastDragged != 0) {
             int dragDist = x - lastDragged;
-            brixel.dragSelectedGroup(dragDist);
+//            brixel.dragSelectedGroup(dragDist);
+            brixel.dragRow(dragDist);
         }
+
         lastDragged = x;
     }
 
@@ -71,7 +73,7 @@ void testApp::mouseDragged(int x, int y, int button){
 void testApp::mousePressed(int x, int y, int button){
     
     if(control_panel.hidden) 
-        brixel.selectRow(y);        
+        brixel.selectRow(y);
 
 }
 
@@ -98,34 +100,37 @@ void testApp::dragEvent(ofDragInfo dragInfo){
 
 void testApp::setupControlPanel() {
     control_panel.setup();
-    control_panel.addPanel("panel");
-    control_panel.addSlider("Brick Height", "brickHeightSlider.xml", brixel.grid.getBrickHeight(), 1, 200, true);
-    control_panel.addSlider("Brick Width", "brickWidthSlider.xml", brixel.grid.getBrickWidth(), 1, 200, true);
-    control_panel.addSlider("Brick Padding", "brickPadding.xml", brixel.grid.getBrickPadding(), 1, 25, true);
-    control_panel.addSlider("Odd Row Offset", "oddRowOffset.xml", brixel.grid.getOddRowOffset(), -200, 200, true);
-    control_panel.addSlider("Even Row Offset", "evenRowOffset.xml", brixel.grid.getEvenRowOffset(), -200, 200, true);
+    control_panel.addPanel("Global Settings");
+    control_panel.addSlider("Brick Height", brixel.grid.getBrickHeight(), 1, 200, true);
+    control_panel.addSlider("Brick Width", brixel.grid.getBrickWidth(), 1, 200, true);
+    control_panel.addSlider("Brick Padding", brixel.grid.getBrickPadding(), 1, 25, false);
+    control_panel.addSlider("Odd Row Offset", brixel.grid.getOddRowOffset(), -brixel.grid.getBrickWidth(), brixel.grid.getBrickWidth(), false);
+    control_panel.addSlider("Even Row Offset", brixel.grid.getEvenRowOffset(), -brixel.grid.getBrickWidth(), brixel.grid.getBrickWidth(), false);
+    control_panel.setupEvents();
     control_panel.enableEvents();
 }
 
 void testApp::updateFromControlPanel() {
-    float newOddOffset = control_panel.getValueI("oddRowOffset.xml");
-    float newEvenOffset = control_panel.getValueI("evenRowOffset.xml");
-    float newHeight = control_panel.getValueI("brickHeightSlider.xml");
-    float newWidth = control_panel.getValueI("brickWidthSlider.xml");
-    float newPadding = control_panel.getValueI("brickPadding.xml");
+    float newOddOffset = control_panel.getValueI("Odd Row Offset");
+    float newEvenOffset = control_panel.getValueI("Even Row Offset");
+    float newHeight = control_panel.getValueI("Brick Height");
+    float newWidth = control_panel.getValueI("Brick Width");
+    float newPadding = control_panel.getValueI("Brick Padding");
+
 
     //updating needs to be event based
 
-//    if( brixel.isRowSelected() ) {
+//    if(control_panel.hasValueChangedInPanel("panel")) {      //for some reason this reports as always changing
 //
-//    } else {
-        brixel.setAllBlockHeights(newHeight);
-        brixel.setAllBlockWidths(newWidth);
-        brixel.setAllBrickPadding(newPadding);
+//        brixel.setAllBlockHeights(newHeight);
+//        brixel.setAllBlockWidths(newWidth);
+//        brixel.setAllBrickPadding(newPadding);
 //        brixel.setEvenRowOffset(newEvenOffset);
 //        brixel.setOddRowOffset(newOddOffset);
-
+//
 //    }
+
+
 
 
 }

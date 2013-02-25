@@ -90,7 +90,11 @@ void MPUBrixelRow::dragRow(int x) {
         xOffset += x;
 }
 
+void MPUBrixelRow::getInfo() {
 
+    cout << "Hi I'm a row-- Offset is:  " << xOffset << "\n";
+
+}
 
 void MPUBrixelRow::setOffset(int val) { xOffset = val; }
 
