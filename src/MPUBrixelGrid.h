@@ -22,6 +22,7 @@ public:
     void draw();
     void selectRow(int y);
     void dragRow(int x);
+    void dragSelectedGroup(int dist);
     
     //------------------Setters------------------\\
 
@@ -41,7 +42,7 @@ public:
     float getBrickHeight();
     int getGridWidth();
     int getGridHeight();
-    
+    MPUBrixelRow getSelectedRow();
 
     
 private:

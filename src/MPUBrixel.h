@@ -23,10 +23,14 @@ public:
     MPUBrixelGrid grid;
     void setAllBlockWidths(float val);
     void setAllBlockHeights(float val);
-    void setBrickPadding(float val);
+    void setAllBrickPadding(float val);
     void setOddRowOffset(float val);
     void setEvenRowOffset(float val);
     void selectRow(int y);
     void dragRow(int x);
+    void dragSelectedGroup(int dist);
+
+
+    bool isRowSelected();
 
 };

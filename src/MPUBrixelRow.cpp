@@ -20,8 +20,8 @@ MPUBrixelRow::~MPUBrixelRow() {
     
 }
 
-//this is hideous
-void MPUBrixelRow::setup(int _numBlocks, int _yCoord, int _xCoord, float _width, int _height, float _blockPadding, int _gridHeight, int _gridWidth ) {
+//this is hideous -- maybe setup with minimal params and use sets to set rest?
+void MPUBrixelRow::setup(int _numBlocks, int _yCoord, int _xCoord, float _width, int _height, float _blockPadding, int _gridHeight, int _gridWidth, bool _isEven ) {
     width = _width;
     height = _height;
     gridWidth = _gridWidth;
@@ -34,12 +34,13 @@ void MPUBrixelRow::setup(int _numBlocks, int _yCoord, int _xCoord, float _width,
     blockPadding = _blockPadding;
     blockWidth = _width/_numBlocks;
     selected = false;
+
+    isEven = _isEven;
+
 }
 
 
-void MPUBrixelRow::update() {
-    
-}
+void MPUBrixelRow::update() { }
 
 
 void MPUBrixelRow::draw(){
@@ -66,45 +67,35 @@ void MPUBrixelRow::draw(){
 }
 
 
-
-
-void MPUBrixelRow::getInfo() {
-    cout << "I am a row, my height is: " << height << ", yCoord: " << yCoord << ", numblocks: " << numBlocks << "\n";
-}
-
-void MPUBrixelRow::setBlockWidth(int val) {
-
-    blockWidth = val;
-
-}
-
-void MPUBrixelRow::setBlockHeight(int val) {
-
-    height = val;
-
-}
-
-void MPUBrixelRow::setBlockPadding(int val) { blockPadding = val; }
-
-void MPUBrixelRow::setOffset(int val) {
-    xOffset = val;
-}
-
-void MPUBrixelRow::selectRow(int y) {
+bool MPUBrixelRow::contains(int y) {
 
     if(y > yCoord && y < yCoord + height) {
         if(!selected) {
-            selected = true;   
+            selected = true;
         } else {
             selected = false;  //toggle
         }
     } else {
         selected = false;
     }
+
+    if (selected)
+        return true;
+    else
+        return false;
+
 }
 
 void MPUBrixelRow::dragRow(int x) {
-    if(selected) {
         xOffset += x;
-    }
 }
+
+
+
+void MPUBrixelRow::setOffset(int val) { xOffset = val; }
+
+void MPUBrixelRow::setBlockWidth(int val) { blockWidth = val; }
+
+void MPUBrixelRow::setBlockHeight(int val) { height = val; }
+
+void MPUBrixelRow::setBlockPadding(int val) { blockPadding = val; }

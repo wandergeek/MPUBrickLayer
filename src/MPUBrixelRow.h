@@ -16,16 +16,18 @@ class MPUBrixelRow {
 public:
     MPUBrixelRow();
     ~MPUBrixelRow();
-    void setup(int _numBlocks, int _yCoord, int _xCoord, float _width, int _height,float blockPadding, int gridHeight, int gridWidth );
+    void setup(int _numBlocks, int _yCoord, int _xCoord, float _width, int _height,float _blockPadding, int _gridHeight, int _gridWidth, bool _isEven );
     void update();
     void draw();
-    void getInfo();
     void setBlockWidth(int val);
     void setBlockHeight(int val);
     void setBlockPadding(int val);
     void setOffset(int val);
-    void selectRow(int y);
+    bool contains(int y);
     void dragRow(int x);
+    bool isEven;
+    bool selected;
+    void wut();
 
 private:
     int numBlocks;
@@ -38,6 +40,7 @@ private:
     int gridHeight;
     int gridWidth;
     int xOffset;
-    bool selected;
-    
+    int ID;
+  
+
 };

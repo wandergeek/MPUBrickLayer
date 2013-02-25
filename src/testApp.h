@@ -24,7 +24,9 @@ class testApp : public ofBaseApp{
         ofxAutoControlPanel control_panel;
 
 
+
     private:
         void setupControlPanel();
+        void updateFromControlPanel();
         int lastDragged;
 };

@@ -42,10 +42,17 @@ void MPUBrixel::selectRow(int y) {
     grid.selectRow(y);
 }
 
-void MPUBrixel::dragRow(int x) {
-    grid.dragRow(x);
+
+void MPUBrixel::dragSelectedGroup(int dist) {
+    grid.dragSelectedGroup(dist);
 }
 
+
+//bool MPUBrixel::isRowSelected() {
+//    if(grid.getSelectedRow().) {
+//
+//    }
+//}
 
 
 //----------------Setters----------------\\
@@ -54,7 +61,7 @@ void MPUBrixel::setAllBlockWidths(float val) { grid.setAllBrickWidths(val); }
 
 void MPUBrixel::setAllBlockHeights(float val) { grid.setAllBrickHeights(val); }
 
-void MPUBrixel::setBrickPadding(float val) { grid.setAllBlockPadding(val); }
+void MPUBrixel::setAllBrickPadding(float val) { grid.setAllBlockPadding(val); }
 
 void MPUBrixel::setOddRowOffset(float val) { grid.setOddRowOffset(val); }
 

@@ -1,7 +1,5 @@
 #include "testApp.h"
 
-static string brickHeightSlider = "brickHeightSlider";
-static string brickWidthSlider = "brickWidthSlider";
 
 //--------------------------------------------------------------
 void testApp::setup(){
@@ -14,18 +12,7 @@ void testApp::setup(){
 
 //--------------------------------------------------------------
 void testApp::update(){
-    float newOddOffset = control_panel.getValueI("oddRowOffset.xml");
-    float newEvenOffset = control_panel.getValueI("evenRowOffset.xml");
-    float newHeight = control_panel.getValueI("brickHeightSlider.xml");
-    float newWidth = control_panel.getValueI("brickWidthSlider.xml");
-    float newPadding = control_panel.getValueI("brickPadding.xml"); 
-
-    brixel.setAllBlockHeights(newHeight);
-    brixel.setAllBlockWidths(newWidth);
-    brixel.setBrickPadding(newPadding);
-    brixel.setEvenRowOffset(newEvenOffset);
-    brixel.setOddRowOffset(newOddOffset);
-
+    updateFromControlPanel();
     brixel.update();
 
 }
@@ -70,12 +57,13 @@ void testApp::mouseMoved(int x, int y){
 //--------------------------------------------------------------
 void testApp::mouseDragged(int x, int y, int button){
 
-//    if( lastDragged != 0) {
-//        int dragDist = x - lastDragged;
-//        brixel.dragRow(dragDist);
-//        lastDragged = x;
-//        cout << dragDist << "\n";
-//    }
+    if(control_panel.hidden) {
+        if( lastDragged != 0) {
+            int dragDist = x - lastDragged;
+            brixel.dragSelectedGroup(dragDist);
+        }
+        lastDragged = x;
+    }
 
 }
 
@@ -84,8 +72,7 @@ void testApp::mousePressed(int x, int y, int button){
     
     if(control_panel.hidden) 
         brixel.selectRow(y);        
-    
-    
+
 }
 
 //--------------------------------------------------------------
@@ -108,6 +95,7 @@ void testApp::dragEvent(ofDragInfo dragInfo){
 
 }
 
+
 void testApp::setupControlPanel() {
     control_panel.setup();
     control_panel.addPanel("panel");
@@ -117,4 +105,27 @@ void testApp::setupControlPanel() {
     control_panel.addSlider("Odd Row Offset", "oddRowOffset.xml", brixel.grid.getOddRowOffset(), -200, 200, true);
     control_panel.addSlider("Even Row Offset", "evenRowOffset.xml", brixel.grid.getEvenRowOffset(), -200, 200, true);
     control_panel.enableEvents();
+}
+
+void testApp::updateFromControlPanel() {
+    float newOddOffset = control_panel.getValueI("oddRowOffset.xml");
+    float newEvenOffset = control_panel.getValueI("evenRowOffset.xml");
+    float newHeight = control_panel.getValueI("brickHeightSlider.xml");
+    float newWidth = control_panel.getValueI("brickWidthSlider.xml");
+    float newPadding = control_panel.getValueI("brickPadding.xml");
+
+    //updating needs to be event based
+
+//    if( brixel.isRowSelected() ) {
+//
+//    } else {
+        brixel.setAllBlockHeights(newHeight);
+        brixel.setAllBlockWidths(newWidth);
+        brixel.setAllBrickPadding(newPadding);
+//        brixel.setEvenRowOffset(newEvenOffset);
+//        brixel.setOddRowOffset(newOddOffset);
+
+//    }
+
+
 }

@@ -38,15 +38,24 @@ void MPUBrixelGrid::setup(int _gridHeight, int _gridWidth, int _blockHeight, int
     bricksPerCol = gridHeight/ blockHeight + 1;
     rowWidth = MAX_BLOCKS_PER_ROW * blockWidth;
 
-    int xOffset = -( (MAX_BLOCKS_PER_ROW * blockWidth) - gridWidth ) / 2;
+    int xOffset = -( (MAX_BLOCKS_PER_ROW * blockWidth) - gridWidth ) / 2;   //puts viewing area in the center of rows wider than screen
 
     for (int i=0; i < MAX_BLOCKS_PER_COL; i++) {
         MPUBrixelRow row;
-        row.setup(MAX_BLOCKS_PER_ROW, blockHeight*i, xOffset, rowWidth, blockHeight, blockPadding, gridHeight, gridWidth);
+        bool isEven;
+
+        if(i % 2 == 0) {
+            isEven = true;
+        } else {
+            isEven = false;
+        }                   
+        row.setup(MAX_BLOCKS_PER_ROW, blockHeight*i, xOffset, rowWidth, blockHeight, blockPadding, gridHeight, gridWidth, isEven);
         rows.push_back(row);
     }
-    
+
 }
+
+
 
 
 void MPUBrixelGrid::update() {
@@ -67,16 +76,42 @@ void MPUBrixelGrid::draw(){
 void MPUBrixelGrid::selectRow(int y) {
 
     for (int i=0; i<rows.size(); i++){
-        rows[i].selectRow(y);
+        rows[i].contains(y);
+//        if(rows[i].contains(y)) {
+//            return;
+//        }
     }
 
 }
 
-void MPUBrixelGrid::dragRow(int x) {
-    for (int i=0; i<rows.size(); i++){
-        rows[i].dragRow(x);
+//void MPUBrixelGrid::selectGroup(int y) {
+//    for (int i=0; i<rows.size(); i++){
+//        rows[i].contains(y);
+//    }
+//
+//}
+
+
+
+void MPUBrixelGrid::dragSelectedGroup(int dist) {
+
+    MPUBrixelRow selectedRow = getSelectedRow();
+    int start;
+
+    if (selectedRow.isEven) {
+        start = 0;
+    } else {
+        start = 1;
     }
+
+    for(int i = start; i < rows.size(); i+=2) {
+        rows[i].dragRow(dist);
+    }
+
+
 }
+
+
 
 
 //------------------Setters------------------
@@ -125,9 +160,14 @@ void MPUBrixelGrid::setEvenRowOffset(float val) {
 
 
 
-
 //------------------Getters------------------
 
+MPUBrixelRow MPUBrixelGrid::getSelectedRow() {
+    for (int i=0; i<rows.size(); i++){
+        if (rows[i].selected) 
+            return rows[i];
+    }
+}
 
 float MPUBrixelGrid::getBrickWidth() { return blockWidth; }
 
