@@ -27,8 +27,8 @@ public:
     
     //------------------Setters------------------\\
 
-    void setAllBrickWidths(float val);
-    void setAllBrickHeights(float val);
+    void setAllBlockWidths(float val);
+    void setAllBlockHeights(float val);
     void setAllBlockPadding(float val);
     void setOddRowOffset(float val);
     void setEvenRowOffset(float val);

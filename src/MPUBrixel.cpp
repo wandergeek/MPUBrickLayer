@@ -63,9 +63,9 @@ void MPUBrixel::dragRow(int x) {
 
 //----------------Setters----------------\\
 
-void MPUBrixel::setAllBlockWidths(float val) { grid.setAllBrickWidths(val); }
+void MPUBrixel::setAllBlockWidths(float val) { grid.setAllBlockWidths(val); }
 
-void MPUBrixel::setAllBlockHeights(float val) { grid.setAllBrickHeights(val); }
+void MPUBrixel::setAllBlockHeights(float val) { grid.setAllBlockHeights(val); }
 
 void MPUBrixel::setAllBrickPadding(float val) { grid.setAllBlockPadding(val); }
 

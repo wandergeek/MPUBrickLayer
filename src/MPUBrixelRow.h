@@ -19,6 +19,7 @@ public:
     void setup(int _numBlocks, int _yCoord, int _xCoord, float _width, int _height,float _blockPadding, int _gridHeight, int _gridWidth, bool _isEven );
     void update();
     void draw();
+    void setBlockY(int val);
     void setBlockWidth(int val);
     void setBlockHeight(int val);
     void setBlockPadding(int val);

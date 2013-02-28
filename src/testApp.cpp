@@ -3,6 +3,8 @@
 
 //--------------------------------------------------------------
 void testApp::setup(){
+
+    ofSetVerticalSync(true);
     
     brixel.setup();
     ofBackground(0);
@@ -99,6 +101,7 @@ void testApp::dragEvent(ofDragInfo dragInfo){
 
 
 void testApp::setupControlPanel() {
+
     control_panel.setup();
     control_panel.addPanel("Global Settings");
     control_panel.addSlider("Brick Height", brixel.grid.getBrickHeight(), 1, 200, true);
@@ -122,11 +125,11 @@ void testApp::updateFromControlPanel() {
 
 //    if(control_panel.hasValueChangedInPanel("panel")) {      //for some reason this reports as always changing
 //
-//        brixel.setAllBlockHeights(newHeight);
-//        brixel.setAllBlockWidths(newWidth);
-//        brixel.setAllBrickPadding(newPadding);
-//        brixel.setEvenRowOffset(newEvenOffset);
-//        brixel.setOddRowOffset(newOddOffset);
+        brixel.setAllBlockHeights(newHeight);
+        brixel.setAllBlockWidths(newWidth);
+        brixel.setAllBrickPadding(newPadding);
+        brixel.setEvenRowOffset(newEvenOffset);
+        brixel.setOddRowOffset(newOddOffset);
 //
 //    }
 

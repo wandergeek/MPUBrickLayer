@@ -120,7 +120,7 @@ void MPUBrixelGrid::dragSelectedGroup(int dist) {
 //------------------Setters------------------
 
 
-void MPUBrixelGrid::setAllBrickWidths(float val) {
+void MPUBrixelGrid::setAllBlockWidths(float val) {
 
     for (int i=0; i<rows.size(); i++){
         rows[i].setBlockWidth(val);
@@ -128,10 +128,14 @@ void MPUBrixelGrid::setAllBrickWidths(float val) {
 
 }
 
-void MPUBrixelGrid::setAllBrickHeights(float val) {
+void MPUBrixelGrid::setAllBlockHeights(float val) {
 
+    float rowY = 0;
+    float rowH = val;
     for (int i=0; i<rows.size(); i++){
-        rows[i].setBlockHeight(val);
+        rows[i].setBlockY(rowY);
+        rows[i].setBlockHeight(rowH);
+        rowY += rowH;
     }
 }
 

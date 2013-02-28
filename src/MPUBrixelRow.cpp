@@ -96,7 +96,11 @@ void MPUBrixelRow::getInfo() {
 
 }
 
+//Setters
+
 void MPUBrixelRow::setOffset(int val) { xOffset = val; }
+
+void MPUBrixelRow::setBlockY(int val) { yCoord = val; }
 
 void MPUBrixelRow::setBlockWidth(int val) { blockWidth = val; }
 
