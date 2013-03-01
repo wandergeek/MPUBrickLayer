@@ -2,7 +2,7 @@
 
 #include "ofMain.h"
 #include "MPUBrixel.h"
-#include "ofxAutoControlPanel.h"
+#include "ofxGui.h"
 
 class testApp : public ofBaseApp{
 	public:
@@ -20,8 +20,23 @@ class testApp : public ofBaseApp{
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
     
-        MPUBrixel brixel;
-        ofxAutoControlPanel control_panel;
+        MPUBrixel brixel;    
+        float blockHeight;
+        float blockWidth;
+        float blockPadding;
+        float oddOffset;
+        float evenOffset;
+
+    
+    //Control panel
+        ofxPanel gui;
+        ofxFloatSlider blockHeightSlider;
+        ofxFloatSlider blockWidthSlider;
+        ofxFloatSlider blockPaddingSlider;
+        ofxFloatSlider oddOffsetSlider;
+        ofxFloatSlider evenOffsetSlider;
+    bool bHide;
+
 
 
 
