@@ -52,7 +52,9 @@ void MPUBrixelGrid::setup(int _gridHeight, int _gridWidth, int _blockHeight, int
         row.setup(MAX_BLOCKS_PER_ROW, blockHeight*i, xOffset, rowWidth, blockHeight, blockPadding, gridHeight, gridWidth, isEven);
         rows.push_back(row);
     }
-
+    
+    selectedRow = NOROWSELECTED;
+    
 }
 
 
@@ -76,10 +78,9 @@ void MPUBrixelGrid::draw(){
 void MPUBrixelGrid::selectRow(int y) {
 
     for (int i=0; i<rows.size(); i++){
-        rows[i].contains(y);
-//        if(rows[i].contains(y)) {
-//            return;
-//        }
+        if(rows[i].contains(y)) {
+            (selectedRow == i) ? (selectedRow = NOROWSELECTED) : (selectedRow = i); 
+        }
     }
 
 }
@@ -96,28 +97,66 @@ void MPUBrixelGrid::dragRow(int x) {
     rows[index].dragRow(x);
 }
 
-void MPUBrixelGrid::dragSelectedGroup(int dist) {
-
-    MPUBrixelRow selectedRow = getSelectedRow();
-    int start;
-
-    if (selectedRow.isEven) {
-        start = 0;
-    } else {
-        start = 1;
-    }
-
-    for(int i = start; i < rows.size(); i+=2) {
-        rows[i].dragRow(dist);
-    }
-
-
-}
-
+//void MPUBrixelGrid::dragSelectedGroup(int dist) {
+//
+//    MPUBrixelRow selectedRow = getSelectedRow();
+//    int start;
+//
+//    if (selectedRow.isEven) {
+//        start = 0;
+//    } else {
+//        start = 1;
+//    }
+//
+//    for(int i = start; i < rows.size(); i+=2) {
+//        rows[i].dragRow(dist);
+//    }
+//
+//
+//}
 
 
 
 //------------------Setters------------------
+
+
+//void MPUBrixelGrid::setRowBlockHeight(float val) {
+//    if(selectedRow != NOROWSELECTED) {
+//        rows[selectedRow].setBlockHeight(val);
+//    }
+//}
+
+
+void MPUBrixelGrid::setRowBlockHeight(float val) {
+    if(selectedRow != NOROWSELECTED) {
+        float shiftAmt = val - rows[selectedRow].getBlockHeight();
+        rows[selectedRow].setBlockHeight(val);
+        cout << "shifting by " << shiftAmt << "\n";
+        for(int i=selectedRow+1; i<rows.size(); i++) {
+            rows[i].shiftRow(shiftAmt);
+        }
+        
+    }
+}
+
+
+void MPUBrixelGrid::setRowBlockWidth(float val) { 
+    if(selectedRow != NOROWSELECTED) {
+        rows[selectedRow].setBlockWidth(val);
+    }
+}
+
+void MPUBrixelGrid::setRowBrickPadding(float val) {
+    if(selectedRow != NOROWSELECTED) {
+        rows[selectedRow].setBlockPadding(val);
+    }
+}
+
+void MPUBrixelGrid::setRowOffset(float val) {
+    if(selectedRow != NOROWSELECTED) {
+        rows[selectedRow].setOffset(val);
+    }
+}
 
 
 void MPUBrixelGrid::setAllBlockWidths(float val) {
@@ -138,6 +177,19 @@ void MPUBrixelGrid::setAllBlockHeights(float val) {
         rowY += rowH;
     }
 }
+
+void MPUBrixelGrid::setBlockHeight(float val) {
+    if(selectedRow != NOROWSELECTED) {
+        float shiftAmt = val - rows[selectedRow].getBlockHeight();
+        rows[selectedRow].setBlockHeight(val);
+        cout << "shifting by " << shiftAmt << "\n";
+        for(int i=selectedRow+1; i<rows.size(); i++) {
+            rows[i].shiftRow(shiftAmt);
+        }
+    
+    }
+}
+
 
 void MPUBrixelGrid::setAllBlockPadding(float val) {
 
@@ -169,10 +221,14 @@ void MPUBrixelGrid::setEvenRowOffset(float val) {
 
 //------------------Getters------------------
 
-MPUBrixelRow MPUBrixelGrid::getSelectedRow() {
-    for (int i=0; i<rows.size(); i++){
-        if (rows[i].selected) 
-            return rows[i];
+int MPUBrixelGrid::getSelectedRow() {
+    return selectedRow;
+
+}
+
+MPUBrixelRow* MPUBrixelGrid::getPtrRow() {
+    if(selectedRow != NOROWSELECTED) {
+        return &rows[selectedRow];
     }
 }
 

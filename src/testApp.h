@@ -26,15 +26,26 @@ class testApp : public ofBaseApp{
         float blockPadding;
         float oddOffset;
         float evenOffset;
+    
+        float rowBlockHeight;
+        float rowBlockWidth;
+        float rowBlockPadding;
+        float rowOffset;
 
     
     //Control panel
-        ofxPanel gui;
-        ofxFloatSlider blockHeightSlider;
+        ofxPanel globalSettingsGUI;
+        ofxFloatSlider gblockHeightSlider;
+        ofxFloatSlider gblockWidthSlider;
+        ofxFloatSlider gblockPaddingSlider;
+        ofxFloatSlider goddOffsetSlider;
+        ofxFloatSlider gevenOffsetSlider;
+
+        ofxPanel rowSettingsGUI;
+        ofxFloatSlider blockHeightSlider;                  //do I need to make copies of all these?
         ofxFloatSlider blockWidthSlider;
         ofxFloatSlider blockPaddingSlider;
-        ofxFloatSlider oddOffsetSlider;
-        ofxFloatSlider evenOffsetSlider;
+        ofxFloatSlider rowOffsetSlider;
     bool bHide;
 
 
@@ -44,4 +55,17 @@ class testApp : public ofBaseApp{
         void setupControlPanel();
         void updateFromControlPanel();
         int lastDragged;
+    
+        float prevBlockHeight;
+        float prevBlockWidth;
+        float prevBlockPadding;
+        float prevOddOffset;
+        float prevEvenOffset;
+        
+        float prevRowBlockHeight;
+        float prevRowBlockWidth;
+        float prevRowBlockPadding;
+        float prevRowOffset;
+    
+        
 };

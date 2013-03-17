@@ -29,8 +29,18 @@ public:
     void selectRow(int y);
     void dragRow(int x);
     void dragSelectedGroup(int dist);
-
+    int getSelectedRow();
 
     bool isRowSelected();
+    
+    
+    MPUBrixelRow* getPtrRow();
+    
+    void setRowBlockHeight(float val);
+    void setRowBlockWidth(float val);
+    void setRowBrickPadding(float val);
+    void setRowOffset(float val);
+    
+    
 
 };

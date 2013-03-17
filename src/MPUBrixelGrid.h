@@ -9,6 +9,7 @@
 #pragma once
 #include "ofMain.h"
 #include "MPUBrixelRow.h"
+#define NOROWSELECTED -1
 
 class MPUBrixelGrid {
     
@@ -25,6 +26,7 @@ public:
     void dragSelectedGroup(int dist);
     int ptrRowTest();
     
+    
     //------------------Setters------------------\\
 
     void setAllBlockWidths(float val);
@@ -32,7 +34,11 @@ public:
     void setAllBlockPadding(float val);
     void setOddRowOffset(float val);
     void setEvenRowOffset(float val);
-    
+    void setRowBlockHeight(float val);
+    void setRowBlockWidth(float val);
+    void setRowBrickPadding(float val);
+    void setRowOffset(float val);
+    void setBlockHeight(float val);
     
     //------------------Getters------------------\\
 
@@ -43,7 +49,8 @@ public:
     float getBrickHeight();
     int getGridWidth();
     int getGridHeight();
-    MPUBrixelRow getSelectedRow();
+    int getSelectedRow();
+    MPUBrixelRow* getPtrRow();
 
     
 private:
@@ -61,4 +68,5 @@ private:
     float evenRowOffset;
     float blockPadding;
     int rowWidth;
+    int selectedRow;
 };

@@ -184,6 +184,51 @@
     <content url="file://$MODULE_DIR$/../../../addons/ofxControlPanel/src/simpleLogger.h">
       <sourceFolder url="file://$MODULE_DIR$/../../../addons/ofxControlPanel/src/simpleLogger.h" isTestSource="false" />
     </content>
+    <content url="file://$MODULE_DIR$/../../../addons/ofxGui/src/ofOscParameter.h">
+      <sourceFolder url="file://$MODULE_DIR$/../../../addons/ofxGui/src/ofOscParameter.h" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../../addons/ofxGui/src/ofParameter.h">
+      <sourceFolder url="file://$MODULE_DIR$/../../../addons/ofxGui/src/ofParameter.h" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../../addons/ofxGui/src/ofxBaseGui.cpp">
+      <sourceFolder url="file://$MODULE_DIR$/../../../addons/ofxGui/src/ofxBaseGui.cpp" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../../addons/ofxGui/src/ofxBaseGui.h">
+      <sourceFolder url="file://$MODULE_DIR$/../../../addons/ofxGui/src/ofxBaseGui.h" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../../addons/ofxGui/src/ofxButton.cpp">
+      <sourceFolder url="file://$MODULE_DIR$/../../../addons/ofxGui/src/ofxButton.cpp" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../../addons/ofxGui/src/ofxButton.h">
+      <sourceFolder url="file://$MODULE_DIR$/../../../addons/ofxGui/src/ofxButton.h" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../../addons/ofxGui/src/ofxGui.h">
+      <sourceFolder url="file://$MODULE_DIR$/../../../addons/ofxGui/src/ofxGui.h" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../../addons/ofxGui/src/ofxLabel.cpp">
+      <sourceFolder url="file://$MODULE_DIR$/../../../addons/ofxGui/src/ofxLabel.cpp" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../../addons/ofxGui/src/ofxLabel.h">
+      <sourceFolder url="file://$MODULE_DIR$/../../../addons/ofxGui/src/ofxLabel.h" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../../addons/ofxGui/src/ofxPanel.cpp">
+      <sourceFolder url="file://$MODULE_DIR$/../../../addons/ofxGui/src/ofxPanel.cpp" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../../addons/ofxGui/src/ofxPanel.h">
+      <sourceFolder url="file://$MODULE_DIR$/../../../addons/ofxGui/src/ofxPanel.h" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../../addons/ofxGui/src/ofxSlider.cpp">
+      <sourceFolder url="file://$MODULE_DIR$/../../../addons/ofxGui/src/ofxSlider.cpp" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../../addons/ofxGui/src/ofxSlider.h">
+      <sourceFolder url="file://$MODULE_DIR$/../../../addons/ofxGui/src/ofxSlider.h" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../../addons/ofxGui/src/ofxToggle.cpp">
+      <sourceFolder url="file://$MODULE_DIR$/../../../addons/ofxGui/src/ofxToggle.cpp" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../../addons/ofxGui/src/ofxToggle.h">
+      <sourceFolder url="file://$MODULE_DIR$/../../../addons/ofxGui/src/ofxToggle.h" isTestSource="false" />
+    </content>
     <content url="file://$MODULE_DIR$/../../../addons/ofxXmlSettings/libs/tinyxml.cpp">
       <sourceFolder url="file://$MODULE_DIR$/../../../addons/ofxXmlSettings/libs/tinyxml.cpp" isTestSource="false" />
     </content>

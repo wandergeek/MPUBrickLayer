@@ -96,14 +96,23 @@ void MPUBrixelRow::getInfo() {
 
 }
 
+
+void MPUBrixelRow::shiftRow(float val) {
+    yCoord += val;
+}
+
+
+//Getters
+
+int MPUBrixelRow::getBlockWidth() { return blockWidth; }
+int MPUBrixelRow::getBlockHeight() { return height; }
+int MPUBrixelRow::getBlockPadding() { return blockPadding; }
+int MPUBrixelRow::getBlockOffset() { return xOffset; }
+
 //Setters
 
 void MPUBrixelRow::setOffset(int val) { xOffset = val; }
-
 void MPUBrixelRow::setBlockY(int val) { yCoord = val; }
-
 void MPUBrixelRow::setBlockWidth(int val) { blockWidth = val; }
-
 void MPUBrixelRow::setBlockHeight(int val) { height = val; }
-
 void MPUBrixelRow::setBlockPadding(int val) { blockPadding = val; }

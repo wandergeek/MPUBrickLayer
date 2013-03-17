@@ -11,10 +11,10 @@ void testApp::setup(){
     lastDragged = 0;
     
     //default values
-    blockHeight = 40;
-    blockWidth = 70;
-    blockPadding = 1;
-    oddOffset = 0;
+    blockHeight = rowBlockHeight = 40;
+    blockWidth = rowBlockWidth = 70;
+    blockPadding = rowBlockPadding = 1;
+    oddOffset = rowOffset = 0;
     evenOffset = 0;
     
     bHide = false;
@@ -34,7 +34,11 @@ void testApp::update(){
 void testApp::draw(){
 
     brixel.draw();
-    if(!bHide){ gui.draw(); }
+    
+    if(!bHide){ 
+        globalSettingsGUI.draw(); 
+        if(brixel.getSelectedRow() != NOROWSELECTED) { rowSettingsGUI.draw(); }
+    }
     
 }
 
@@ -74,14 +78,25 @@ void testApp::mouseMoved(int x, int y){
 
 //--------------------------------------------------------------
 void testApp::mouseDragged(int x, int y, int button){
-
+    
+    if(bHide) {
+        if( lastDragged != 0) {
+            int dragDist = x - lastDragged;
+            //            brixel.dragSelectedGroup(dragDist);
+            brixel.dragRow(dragDist);
+        }
+        
+        lastDragged = x;
+    }
 
 }
 
 //--------------------------------------------------------------
 void testApp::mousePressed(int x, int y, int button){
     
-
+    if(bHide) 
+        brixel.selectRow(y);
+    
 }
 
 //--------------------------------------------------------------
@@ -107,23 +122,60 @@ void testApp::dragEvent(ofDragInfo dragInfo){
 
 void testApp::setupControlPanel() {
 
-    gui.setup("Global"); // most of the time you don't need a name
-	gui.add(blockHeightSlider.setup( "Brick Height", blockHeight, 5, 300 ));  //	setup(sliderName,_val,_min,_max,width,height);
-	gui.add(blockWidthSlider.setup( "Brick Width", blockWidth, 10, 300 ));
-	gui.add(blockPaddingSlider.setup( "Brick Padding", 1, 1, 40 ));
-    gui.add(oddOffsetSlider.setup( "Odd Row Offset", oddOffset, -100, 100 ));
-    gui.add(evenOffsetSlider.setup( "Even Row Offset", oddOffset, -100, 100 ));
-    
+    globalSettingsGUI.setup("Global");
+//    ofxPanel * ofxPanel::setup(string collectionName, string _filename, float x, float y){
+
+	globalSettingsGUI.add(gblockHeightSlider.setup( "Brick Height", blockHeight, 5, 300 ));  //	setup(sliderName,_val,_min,_max,width,height);
+	globalSettingsGUI.add(gblockWidthSlider.setup( "Brick Width", blockWidth, 10, 300 ));
+	globalSettingsGUI.add(gblockPaddingSlider.setup( "Brick Padding", blockPadding, 1, 40 ));
+    globalSettingsGUI.add(goddOffsetSlider.setup( "Odd Row Offset", oddOffset, -100, 100 ));
+    globalSettingsGUI.add(gevenOffsetSlider.setup( "Even Row Offset", oddOffset, -100, 100 ));
+
+    rowSettingsGUI.setup("Row", "settings.xml" ,10,500 );
+    rowSettingsGUI.add(blockHeightSlider.setup( "Brick Height", rowBlockHeight, 5, 300 ));  
+    rowSettingsGUI.add(blockWidthSlider.setup( "Brick Width", rowBlockWidth, 10, 300 ));
+    rowSettingsGUI.add(blockPaddingSlider.setup( "Brick Padding", rowBlockPadding, 1, 40 ));
+    rowSettingsGUI.add(rowOffsetSlider.setup( "Row Offset", rowOffset, -100, 100 ));
+
     
 }
-
 void testApp::updateFromControlPanel() {
 
-    brixel.setAllBlockHeights(blockHeightSlider.value);
-    brixel.setAllBlockWidths(blockWidthSlider.value);
-    brixel.setAllBrickPadding(blockPaddingSlider.value);
-    brixel.setEvenRowOffset(evenOffsetSlider.value);
-    brixel.setOddRowOffset(oddOffsetSlider.value);
+   
+    if(prevBlockHeight != gblockHeightSlider.value) {brixel.setAllBlockHeights(gblockHeightSlider.value); }
+    prevBlockHeight = gblockHeightSlider.value;
+    
+    if(prevBlockWidth != gblockWidthSlider.value) {brixel.setAllBlockWidths(gblockWidthSlider.value); }
+    prevBlockWidth = gblockWidthSlider.value;
+    
+    if(prevBlockPadding != gblockPaddingSlider.value) {brixel.setAllBrickPadding(gblockPaddingSlider.value); }
+    prevBlockPadding = gblockPaddingSlider.value;
+    
+    if(prevOddOffset != goddOffsetSlider.value) { brixel.setOddRowOffset(goddOffsetSlider.value); }    
+    prevOddOffset = goddOffsetSlider.value;
+
+    if(prevEvenOffset != gevenOffsetSlider.value) {brixel.setEvenRowOffset(gevenOffsetSlider.value); }    
+    prevEvenOffset = gevenOffsetSlider.value;
+    
+    
+    if(brixel.getSelectedRow() != NOROWSELECTED) {
+        
+        MPUBrixelRow *selectedRow = brixel.getPtrRow();
+        
+        rowBlockHeight = selectedRow->getBlockHeight();
+        rowBlockWidth = selectedRow->getBlockWidth();
+        rowBlockPadding = selectedRow->getBlockPadding();
+        rowOffset = selectedRow->getBlockOffset();
+        brixel.setRowBlockHeight(blockHeightSlider.value);
+        brixel.setRowBlockWidth(blockWidthSlider.value);
+        brixel.setRowBrickPadding(blockPaddingSlider.value);
+        brixel.setRowOffset(rowOffsetSlider.value);
+    }
+    
+    
+
+    
+    
     
 }
 

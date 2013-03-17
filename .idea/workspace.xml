@@ -2,14 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="12e328dd-3099-4ef6-ac89-388c2670a4fb" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/emptyExampleDebug.app/Contents/MacOS/emptyExampleDebug" afterPath="$PROJECT_DIR$/bin/emptyExampleDebug.app/Contents/MacOS/emptyExampleDebug" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MPUBrixel.cpp" afterPath="$PROJECT_DIR$/src/MPUBrixel.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/emptyExample.app/Contents/MacOS/emptyExample" afterPath="$PROJECT_DIR$/bin/emptyExample.app/Contents/MacOS/emptyExample" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/emptyExample.xcodeproj/project.xcworkspace/xcuserdata/nick.xcuserdatad/UserInterfaceState.xcuserstate" afterPath="$PROJECT_DIR$/emptyExample.xcodeproj/project.xcworkspace/xcuserdata/nick.xcuserdatad/UserInterfaceState.xcuserstate" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/MPUBrickLayer.iml" afterPath="$PROJECT_DIR$/.idea/MPUBrickLayer.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/emptyExample.xcodeproj/xcshareddata/xcschemes/emptyExample Debug.xcscheme" afterPath="$PROJECT_DIR$/emptyExample.xcodeproj/xcshareddata/xcschemes/emptyExample Debug.xcscheme" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MPUBrixelGrid.cpp" afterPath="$PROJECT_DIR$/src/MPUBrixelGrid.cpp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MPUBrixelGrid.h" afterPath="$PROJECT_DIR$/src/MPUBrixelGrid.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MPUBrixelRow.cpp" afterPath="$PROJECT_DIR$/src/MPUBrixelRow.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MPUBrixelRow.h" afterPath="$PROJECT_DIR$/src/MPUBrixelRow.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/testApp.cpp" afterPath="$PROJECT_DIR$/src/testApp.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/testApp.h" afterPath="$PROJECT_DIR$/src/testApp.h" />
     </list>
     <ignored path="emptyExample.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -41,7 +41,7 @@
       <file leaf-file-name="MPUBrixelRow.cpp" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/MPUBrixelRow.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="18" selection-start="346" selection-end="346" vertical-scroll-proportion="-3.2727273">
+            <state line="23" column="18" selection-start="346" selection-end="346" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -56,10 +56,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MPUBrixelGrid.cpp" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="MPUBrixelGrid.h" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/MPUBrixelGrid.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="63" column="29" selection-start="1404" selection-end="1404" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MPUBrixelGrid.cpp" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/MPUBrixelGrid.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="137" column="21" selection-start="2704" selection-end="2704" vertical-scroll-proportion="-2.6545455">
+            <state line="119" column="0" selection-start="2325" selection-end="2325" vertical-scroll-proportion="0.4360465">
               <folding />
             </state>
           </provider>
@@ -74,10 +83,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="testApp.cpp" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="testApp.h" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/testApp.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="39" column="99" selection-start="1087" selection-end="1087" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="testApp.cpp" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/testApp.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="103" column="4" selection-start="2416" selection-end="2416" vertical-scroll-proportion="0.13368984">
+            <state line="123" column="82" selection-start="3052" selection-end="3052" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -98,15 +116,15 @@
       <list>
         <option value="$PROJECT_DIR$/src/MPUBrixelBlock.h" />
         <option value="$PROJECT_DIR$/src/MPUBrixelBlock.cpp" />
-        <option value="$PROJECT_DIR$/src/testApp.h" />
         <option value="$PROJECT_DIR$/src/MPUBrixel.h" />
         <option value="$PROJECT_DIR$/src/MPUBrixel.cpp" />
-        <option value="$PROJECT_DIR$/src/MPUBrixelGrid.h" />
         <option value="$PROJECT_DIR$/../../../addons/ofxControlPanel/src/ofxControlPanel.cpp" />
         <option value="$PROJECT_DIR$/src/MPUBrixelRow.h" />
         <option value="$PROJECT_DIR$/src/MPUBrixelRow.cpp" />
-        <option value="$PROJECT_DIR$/src/MPUBrixelGrid.cpp" />
+        <option value="$PROJECT_DIR$/src/testApp.h" />
         <option value="$PROJECT_DIR$/src/testApp.cpp" />
+        <option value="$PROJECT_DIR$/src/MPUBrixelGrid.cpp" />
+        <option value="$PROJECT_DIR$/src/MPUBrixelGrid.h" />
       </list>
     </option>
   </component>
@@ -178,16 +196,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="DirectoryView.Xcode">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="emptyExample" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeDirectoryView$1$1" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -216,14 +224,24 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="DirectoryView.Xcode">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="emptyExample" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeDirectoryView$1$1" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="recentsLimit" value="5" />
     <property name="options.lastSelected" value="editor.preferences.appearance" />
-    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="recentsLimit" value="5" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RunManager" selected="Application.emptyExample Debug">
     <configuration default="true" type="AppleRunConfiguration" factoryName="Application" PROJECT_NAME="emptyExample" TARGET_NAME="emptyExample" CONFIG_NAME="Debug" PASS_PARENT_ENVS="FALSE" RUN_TARGET_PROJECT_NAME="emptyExample" RUN_TARGET_NAME="emptyExample" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
@@ -271,11 +289,11 @@
     <frame x="0" y="22" width="1440" height="874" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32546583" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32546583" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32948717" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18125" sideWeight="0.7304348" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18125" sideWeight="0.67453414" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -383,30 +401,14 @@
         <state line="30" column="0" selection-start="443" selection-end="443" vertical-scroll-proportion="0.48054475" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MPUBrixelGrid.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="7" selection-start="529" selection-end="529" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../../addons/ofxControlPanel/src/ofxControlPanel.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state line="827" column="0" selection-start="22864" selection-end="22864" vertical-scroll-proportion="0.020435967" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/testApp.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="23" selection-start="580" selection-end="580" vertical-scroll-proportion="0.4618474">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../../addons/ofxControlPanel/src/ofxAutoControlPanel.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="37" selection-start="893" selection-end="907" vertical-scroll-proportion="0.02008032">
-          <folding />
-        </state>
+        <state line="39" column="37" selection-start="893" selection-end="907" vertical-scroll-proportion="0.02008032" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MPUBrixel.h">
@@ -430,23 +432,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MPUBrixelGrid.cpp">
+    <entry file="file://$PROJECT_DIR$/src/MPUBrixelRow.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="137" column="21" selection-start="2704" selection-end="2704" vertical-scroll-proportion="-2.6545455">
+        <state line="23" column="18" selection-start="346" selection-end="346" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MPUBrixelRow.cpp">
+    <entry file="file://$PROJECT_DIR$/src/testApp.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="18" selection-start="346" selection-end="346" vertical-scroll-proportion="-3.2727273">
+        <state line="39" column="99" selection-start="1087" selection-end="1087" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/testApp.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="103" column="4" selection-start="2416" selection-end="2416" vertical-scroll-proportion="0.13368984">
+        <state line="123" column="82" selection-start="3052" selection-end="3052" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MPUBrixelGrid.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="63" column="29" selection-start="1404" selection-end="1404" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MPUBrixelGrid.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="119" column="0" selection-start="2325" selection-end="2325" vertical-scroll-proportion="0.4360465">
           <folding />
         </state>
       </provider>
