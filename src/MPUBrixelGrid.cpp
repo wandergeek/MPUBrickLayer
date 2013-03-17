@@ -131,7 +131,6 @@ void MPUBrixelGrid::setRowBlockHeight(float val) {
     if(selectedRow != NOROWSELECTED) {
         float shiftAmt = val - rows[selectedRow].getBlockHeight();
         rows[selectedRow].setBlockHeight(val);
-        cout << "shifting by " << shiftAmt << "\n";
         for(int i=selectedRow+1; i<rows.size(); i++) {
             rows[i].shiftRow(shiftAmt);
         }
